@@ -1,4 +1,5 @@
-FROM --platform=linux/amd64 node:18-alpine AS build
+# Especificamos la plataforma x86_64 explícitamente
+FROM --platform=linux/amd64 node:24-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install

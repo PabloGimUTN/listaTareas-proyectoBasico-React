@@ -58,8 +58,8 @@ if (textoInput.trim() === '') return;
 <ol className="task-list">
   {tareas.map((tarea, index) => (
     <li key={index} className={`task-item ${tarea.completada ? "completed" : ""}`}>
-      <span>{tarea.texto}</span>
-    <div className="task-actions">
+      <span className="texto-tarea">{tarea.texto}</span> {/* <-- ¡Acá faltaba la clase! */}
+      <div className="task-actions">
         <button type="button" onClick={() => completarTarea(index)}>
           ✅
         </button>

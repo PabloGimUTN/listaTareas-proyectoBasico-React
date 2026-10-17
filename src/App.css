@@ -66,3 +66,14 @@ max-width: 400px;
   text-decoration: line-through;
   color: #888;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: column; /* o row según tu diseño */
+  width: 100%;
+}
+
+.texto-tarea {
+  overflow-wrap: anywhere; /* Le dice al navegador que corte la palabra si no entra */
+  word-break: break-word;
+}
