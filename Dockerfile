@@ -1,12 +1,12 @@
-FROM node:18-alpine AS build
+FROM --platform=linux/amd64 node:18-alpine AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
 
-# Paso 2: Servir la aplicación con un servidor web ligero (Nginx)
-FROM nginx:alpine
+# Servidor web ligero para produccion
+FROM --platform=linux/amd64 nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
